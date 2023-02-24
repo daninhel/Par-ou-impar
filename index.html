@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        body{
+            background-color: rgb(201, 148, 201);
+        }
+        div#tudo{
+            font: normal 15pt arial;
+            background-color: white ;
+            border-radius: 15px;
+            height: 280px;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+        }
+        div#res{
+            padding-top: 20px;
+        }
+        #letras{
+            padding:7px ;
+        }
+        h2{
+            position: relative;
+            padding-top: 11px;
+        }
+        input{
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tudo">
+        <div>
+            <h2 id="letras">Teste para saber se um numero é par ou ímpar</h2>
+            <p id="letras">digite o valor para saber se ele é par ou ímpar:</p>
+                <input type="number" name="numero" id="numero"> <!-- esqueci de preencher o campo name -->
+                <input type="button" value="verificar" onclick="verificao()">
+        </div>
+                <div id="res">
+
+                </div>
+        <script>
+            function verificao() {
+                var numero = parseInt(document.getElementById("numero").value);//esqueci do parseInte do .value no final 
+                var res = document.getElementById("res");
+    
+                if (isNaN(numero)/*não sabia esse comando de verificação*/) {
+                    window.alert("Resultado inválido, digite apenas números.");
+                } else if (numero % 2 == 0 || numero == 0) {
+                    res.innerHTML = "O número é par.";
+                } else {
+                    res.innerHTML = "O número é ímpar.";
+                }
+            }   
+        </script>
+    </div>
+</body>
+</html>
